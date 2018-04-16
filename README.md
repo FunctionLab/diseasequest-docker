@@ -3,9 +3,9 @@
 
 ## diseaseQUEST setup
 
-First, install docker: https://docs.docker.com/install/.
+First, install docker: https://docs.docker.com/install/. (Make sure docker is running after you install it.)
 
-Then build and initialize the dq (diseaseQUEST) docker image. Initialization will trigger a download of a smaller ~5GB test data file (all data, etc., would result in a >500GB file), which includes some example tissue networks for disease prediction; all tissue networks can be downloaded from http://wisp.princeton.edu/download/.
+Then, build and initialize the dq (diseaseQUEST) docker image. Initialization will trigger a download of a smaller ~5GB test data file (all data, etc., would result in a >500GB file), which includes some example tissue networks for disease prediction; all tissue networks can be downloaded from http://wisp.princeton.edu/download/.
 
 ```bash
 $ git clone git@github.com:FunctionLab/diseasequest-docker.git
