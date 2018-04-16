@@ -1,0 +1,35 @@
+syntax: glob
+MyTools
+workspace
+.settings*
+.deps
+*.Po
+*.cache
+*.in
+*.log
+*.o
+*~
+tools/*/*.am
+tools/PCLDistancer
+tools/FAer
+config.status
+Makefile
+aclocal.m4
+configure
+history
+src/libSleipnir.a
+doc/html
+doc/latex
+bin/*
+
+extlib
+
+.configure.local
+.local_bash_history.txt
+.cproject
+.project
+
+syntax: regexp
+# ignore the binaries
+^tools/(?P<tool>[^/]*)/(?P=tool)$
+hgignore

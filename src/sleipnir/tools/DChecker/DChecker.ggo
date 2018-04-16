@@ -1,0 +1,81 @@
+package	"DChecker"
+version	"1.0"
+purpose	"Similarity to answer file checker"
+
+section "Main"
+option	"input"			i	"Similarity DAT/DAB file"
+							string	typestr="filename"	yes
+option	"answers"		w	"Answer DAT/DAB file"
+							string	typestr="filename"	yes
+
+section "Miscellaneous"
+option	"directory"		d	"Output directory"
+							string	typestr="directory"	default="."
+option	"auc"			a	"Use alternative AUCn calculation"
+							float	default="0"
+option	"randomize"		R	"Calculate specified number of randomized scores"
+							int	default="0"
+
+section "Ranking Method"
+option	"bins"			b	"Bins for quantile sorting"
+							int	default="1000"
+option	"finite"		f	"Count finitely many bins"
+							flag	off
+option	"min"			m	"Minimum correlation to process"
+							float	default="0"
+option	"max"			M	"Maximum correlation to process"
+							float	default="1"
+option	"delta"			e	"Size of correlation bins"
+							double	default="0.01"
+
+section "Learning/Evaluation"
+option	"genes"			g	"Gene inclusion file"
+							string	typestr="filename"
+option	"genex"			G	"Gene exclusion file"
+							string	typestr="filename"
+option  "ubiqg"                 P       "Ubiquitous gene file (-j and -J refer to connections to ubiq instead of all bridging pairs)"
+                                                        string  typestr="filename"
+option	"genet"			c	"Term inclusion file"
+							string	typestr="filename"
+option	"genee"			C	"Edge inclusion file"
+							string	typestr="filename"
+option	"genep"			l	"Gene inclusion file for positives"
+							string	typestr="filename"
+option  "ctxtpos"               q       "Use positive edges between context genes"
+                                                        flag    on
+option  "ctxtneg"               Q       "Use negative edges between context genes"
+                                                        flag    on
+option  "bridgepos"             j       "Use bridging positives between context and non-context genes"
+                                                        flag    off
+option  "bridgeneg"             J       "Use bridging negatives between context and non-context genes"
+                                                        flag    on
+option  "outpos"                u       "Use positive edges outside the context"
+                                                        flag    off
+option  "outneg"                U       "Use negative edges outside the context"
+                                                        flag    off
+option	"weights"			W	"Weight file"
+							string	typestr="filename"
+option	"flipneg"           F       "Flip weights(one minus original) for negative standards"
+                                                        flag    on
+option	"singlegene"  	        S       "Randomly subsample the standards so that a gene occurs at most once in positive and also in negative standards"
+                                                        flag    off
+option	"genec"			E	"Gene file to split positives into new positive examples and negative examples. All positive pairs with both genes in the gene list are only consided as positives. All positive pairs with both genes not in the gene list are considered as negatives. (all original negatives are ignored)."
+							string	typestr="filename"
+
+section "Preprocessing"
+option	"normalize"		n	"Normalize scores before processing"
+							flag	off
+option	"invert"		t	"Invert correlations to distances"
+							flag	off
+option	"abs"			A	"Convert input to its absolute values"
+							float	default="0.0"
+
+section "Optional"
+option	"sse"			s	"Calculate sum of squared errors"
+							flag	off
+option	"memmap"		p	"Memory map input DABs"
+							flag	off
+option	"verbosity"		v	"Message verbosity"
+							int	default="5"
+option	"random"		r	"Seed random generator (default -1 uses current time)"
+							int	default="-1" no
