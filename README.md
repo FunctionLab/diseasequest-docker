@@ -34,7 +34,7 @@ Example:
 ```bash
 docker run -v `pwd`/data/:/dq/data -v `pwd`/outputs:/dq/outputs dq networks dopaminergic_neuron
 ``` 
-Will generate the dopaminergic neuron network located at ./output/all/predictions.
+Will generate the dopaminergic neuron network located at `./outputs/all/predictions.`
 
 The network is a .dab file (gene ids are entrez gene ids) that can be queried and explored using `Dat2Dab` (in `bin/`); more documentation for `Dat2Dab` is available at https://libsleipnir.bitbucket.io/Dat2Dab.html.
 
@@ -64,14 +64,14 @@ Example:
 docker run -v `pwd`/data/:/dq/data -v `pwd`/outputs:/dq/outputs dq predictions parkinsons_disease dopaminergic_neuron
 ```
 
-Will generate the predictions for Parkinson's disease using the dopaminergic neuron network located at ./output/parkinsons_disease.predictions.
+Will generate the predictions for Parkinson's disease using the dopaminergic neuron network located at `./outputs/parkinsons_disease.predictions`.
 
 
 ```bash
 docker run -v `pwd`/data/:/dq/data -v `pwd`/outputs:/dq/outputs dq predictions longevity intestine
 ```
 
-Will generate the predictions for longevity using the intestine network located at ./output/longevity.predictions.
+Will generate the predictions for longevity using the intestine network located at `./outputs/longevity.predictions`.
 
 ### Help menu
 
